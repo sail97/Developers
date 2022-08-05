@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+    <h3>Projects</h3>
+
+    <table>
+        <th>name</th>
+        <th>description</th>
+    </table>
+
+    {% for p in projects %}
+        <td>{{p.title}}</td>
+        <td>{{p.description}}</td>
+        <td><a href="{% url 'single-project' p.id %}">View</a></td>
+        <td><a href="{% url 'update-project' p.id %}">Edit</a></td>
+        <td><a href="{% url 'delete-project' p.id %}">Delete</a></td>
+
+
+
+    {% endfor %}
+
+
+{% endblock %}
